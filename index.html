@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/stlye.css">
+</head>
+<body>
+    <header class="contenedor">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Teoria DOM</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#dom">Objeto documento(DOM) (document)</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#obtenerElementos">Obtener Elementos o Elementos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#nodos">Nodos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#textcontent">TextContent</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#style">Estilos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#domtravesing">DomTraversing</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#createelement">createElement</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#innerHtml"> innerHTML</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-6 mt-5">
+                    <h2 id="dom">D.O.M (Document Object Model)</h2>
+                    <p class="mt-5">
+                        Nos ayuda a entender todo lo que el usuario puede visualziar en html , todo lo que podemos ver o no podemos ver.
+                        Nos permite acceder a los elementos
+                        Es una representacion en forma de arbol de todos los elementos de <strong>una pagina web</strong>
+
+                    </p>
+                    <p>Consideras que el D.O.M no es parte del javascript, es imporante considera que el elemento padre del D.O.M se llama <strong>document</strong></p>
+
+                    <p>Ejemplo</p>
+                    <ul class="elementos-dom">
+                        <li>
+                            <a>(document)</a>
+                            <p>Muestra todos los elementos del documento</p>
+                        </li>
+                        <li>
+                            <a>(document.head)</a>
+                            <p>Muestra solo los elementos dentro del nodo head</p>
+                        </li>
+                        <li>
+                            <a>(document.body)</a>
+                            <p>Muestra solo los elementos dentro del nodo body</p>
+                        </li>
+                        <li>
+                            <a>(document.domain)</a>
+                            <p>Muestra el dominio del documento</p>
+                        </li>
+                    </ul>
+                    <h3>Ejemplo Document</h3>
+                    <img src="img/ejemplodocument.png">
+                    <img src="img/documentobjo.png">
+                </div>
+                <div class="col-6 mt-5">
+                <h2 id="obtenerElementos">Obtener Elemento o Elementos</h2>
+                <p class="mt-5">Para obtener un <strong>elemento</strong> se puede obtener mediante el <strong>id y la siguiente clase<strong></p>
+                    <h3>Forma Antigua</h3>
+                    <nav>
+                        <ul class="elementos-dom">
+                            <li>
+                                <a>document.getElementById()</a>
+                                <p>Selecciona un elemento buscnadolo por su id</p>
+                            </li>
+                            <li>
+                                <a>document.getElementsByClassName()</a>
+                                <p>Seleccionas elementos buscandolo por su clase</p>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="ejemplo">
+                        <h2 id="titulo-ejemplo"> Titulo del Ejemplo</h2>
+                        <p class="parrafo-ejemplo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur debitis aliquid non perferendis, saepe nobis deleniti blanditiis deserunt distinctio esse impedit culpa facilis maxime numquam suscipit doloribus rem odio. Vel!</p>
+                        <p class="parrafo-ejemplo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, illo, earum ea excepturi tenetur debitis quis doloribus architecto aliquid necessitatibus, ipsa culpa accusantium voluptas adipisci incidunt consequatur quaerat libero dolores!</p>
+                        <p class="parrafo-ejemplo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia earum esse minus itaque perspiciatis, necessitatibus, nemo aliquam fugit qui molestiae? Ut culpa debitis molestiae asperiores obcaecati est eius non.
+                        </p>
+                        </div>
+
+                        <img src="img/ejemplo-elemnstbyidclass.png">
+                        <img src="img/ejemplo-elemnstbyidclass.png">
+                        <img src="img/ejemplo-id-clas.png">
+                    <h3>Forma Recomendada</h3>
+                <p>Para seleccionar un elemento o varios elementos aprovechando todo el potencial de <strong>css</strong> se utiliza la <strong> Query Selector</strong></p>
+
+                <nav>
+                    <ul>
+                        <li>
+                            <a>Query Selector</a>
+                            <p>Solo devuele el primer elemento que encuentra</p>
+                        </li>
+                        <li>
+                            <a>Query Selector All</a>
+                            <p>Devuelve un arreglo de todos los elementos</p>
+                        </li>
+                    </ul>
+                </nav>
+                    <div class="ejemplo-query-selector">
+                        <h2 class="titulo-ejemplo-query-selector">Ejemplo</h2>
+                        <ul class="ejemplo-ul">
+                            <li>
+                                <a>Elemento 1</a>
+                            </li>
+                            <li>
+                                <a>Elemento 2</a>
+                            </li>
+                            <li>
+                                <a>Elemento 3</a>
+                            </li>
+                            <li>
+                                <a>Elemento 4</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <img src="img/ejemploqueryselectorall.png">
+                    <img src="img/consola-queryselecotr.png">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <h3 id="nodos">Nodos</h3>
+                <p>Los nodos son la unidad minima de medida dentro del D.O.M, en el D.O.M </p>
+                <p>Todo los elementos de D.O.M son nodos y <strong>se clasifican en</strong></p>
+                <ul>
+                    <li>
+                        <a>Nodo Elemento</a>
+                        <p>Ejemplo Etiquetas p , h1 , h2</p>
+                    </li>
+                    
+                    <li>
+                        <a>Nodo Atributo</a>
+                        <p>Ejemplo id="nombre" clase="nombre"</p>
+                    </li>
+                    <li>
+                        <a>Nodo Texto</a>
+                        <p>Es el texto que va dentro de un elemento o su contenido</p>
+                    </li>
+                </ul>
+                <p>Todo element HTML es un nodo, pero no todo nodo es un elemento html</p>
+
+                <p class="parrafo-nodo" id="id-nodo">Hola Soy un nodo</p>
+                <!--Nodo de tipo elemeno es todo elemento p -->
+                <!--Nodo atributo la clase "parrafo-nodo" y id "id-nodo" -->
+                <!--Nodo tipo texto Hoy soy un nodo-->
+                <img src="img/tipos de nodos.png">
+                </div>
+             
+                <div class="col-6">
+                    <h3 id="textcontent">TextContet</h3>
+                    <p>El un metodoq que nos permite acceder al contenido del elemento y cambiar su valor</p>
+
+                    <div class="ejemplo-text-content">
+                        <p class="pTextContent">Soy un parrafo de ejemplo</p>
+                    </div>
+                    <img src="img/ejemplotetextocont.png">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <h3 id="style">Style</h3>
+                    <p>La propiedad Style nos permite acceder y manipular los estilos CSS de un elemento HTML desde Javascript</p>
+                    <p>Tener en cuenta que la etiqueta <strong>style aplica en htlm como si fuera inline con espicificida 1000</strong> </p>
+                    <p>Pero si yo aplico <strong>important en el css me voy a zurrar en lo que haya hecho en javascript por que es de mayor especificidad</strong></p>
+                    <p>Existen 2 formas de añadir estilos </p>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a>style</a>
+                            </li>
+                            
+                            <li>
+                                <a>classList.add()</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <h3>Ejemplo Style</h3>
+                    <div class="ejemplo-style">
+                        <p>Se cambio a el estilo del color rojo para este parrafo a los parrafos con style</p>
+                        <p>Se cambio a el estilo del color rojo para este parrafo a los parrafos con style</p>
+                        <p>Se cambio a el estilo del color rojo para este parrafo a los parrafos con style</p>
+                        <p>Se cambio a el estilo del color rojo para este parrafo a los parrafos con style</p>
+                        <p>Se cambio a el estilo del color rojo para este parrafo a los parrafos con style</p>
+                    </div>
+                    <h3>Ejemplo Class</h3>
+                    <p>Se creo un boton se que le añadira la clase btn-primary el cual contiene todos los estilos de bootstrap</p>
+                    <button class="boton-ejemplo">Inicio</button>
+                </div>
+                  
+                <div class="col-6">
+                    <h3 id="domtravesing">D.O.M Travesing</h3>
+                    <p>Nos permite movernos entre los elementos html , recorrer el D.O.M como si fuera un arbol , siempre hay una partida inicio y de alli nos movemos , para realizar algún cambio de estilo, o lo que deseemos realizar</p>
+                    <h3>parentElement</h3>
+                    <p>Nos permite recorrer de hijo a padre Se utila propiedad <strong>parentElement</strong></p>
+            
+                    <h3>NextSibling </h3>
+                    <p>Nos permite encontrar un hermano adyacente</p>
+                    <h3>Children</h3>
+                    <p>Nos permite recorrer de padre a hijo se utiliza el meotod children</p>
+                    <h3>Ejemplo con Parent Element</h3>
+                    <div class="ejemplo-parent-element">
+                        <nav class="navbar-1">
+                            <ul>
+                                <li>
+                                    <a>Soy el primer enlace</a>
+                                </li>
+                                <li>
+                                    <a>Soy el segundo enlace</a>
+                                </li>
+                                <li>
+                                    <a>Soy el tercer enlace</a>
+                                </li>
+                                <li>
+                                    <a>Soy el cuarto enlace</a>
+                                </li>
+                                <li>
+                                    <a>Soy el quinto enlace</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <img src="img/parentelement.png">
+
+                    <h3>Ejemplo Children con NextSibling</h3>
+                    <div class="ejemplo-NextSibling">
+                        <nav class="navbar-2">
+                            <ul>
+                                <li>
+                                    <a>Soy el primer enlace</a>
+                                </li>
+                                <li>
+                                    <a>Soy el segundo enlace recorrido por children  y nextsibling</a>
+                                </li>
+                                <li>
+                                    <a>Soy el tercer enlace </a>
+                                </li>
+                                <li>
+                                    <a>Soy el cuarto enlace</a>
+                                </li>
+                                <li>
+                                    <a>Soy el quinto enlace</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <img src="img/childrennextsibling.png">
+                </div>
+                   
+                    </div>
+
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <h3 id="createelement" class="mb-5">Crear Elementos</h3>
+                    <p>Javascript nos permite crear elementos html para despues insertalo se utiliza la propiedad <strong>div element</strong></p>
+                    <p>Para poder insertar un elemento tiene que estar contenido dentro de un padre, con el metodo <strong>append child </strong> nos permite agregar como un hijo a un elemento creado</p>
+                    <div class="ejemplo-create-element">
+                        <h4 class="mb-5">Ejemplo de Boto Creado en Javascript</h4>
+                    </div>
+                    <img src="img/ejemplocrearelemento.png">
+                </div>
+                <div class="col-6">
+                    <h3 id="innerHtml">Inner HTML</h3>
+                    <p>Nos permite <strong>agregar tanto texto con etiquetas html en el D.O.M</strong></p>
+
+                    <div class="ejemplo-inner-html">
+                    </div>
+                    <img src="img/ejempliiner.png">
+                    <p>¿Cual es la diferencia entre text Content y HTML</p>
+                    <p>El textcontent solo permite agregar texto y el Inner HTMl permite agregar etiquetas aparte de Texto</p>
+                </div>
+            </div>
+           
+        </div>
+    </main>
+    
+
+    <script src="js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+</html>
